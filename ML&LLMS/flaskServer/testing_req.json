@@ -1,0 +1,72 @@
+[
+    {
+        "request": "GET /api/v1/resource?search=<script>alert(1)</script>",
+        "body": "",
+        "headers": {
+            "Cookie": "sessionid=<img src=x onerror=alert(1)>",
+            "User_Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+            "Accept_Encoding": "gzip, deflate",
+            "Accept_Language": "en-US"
+        }
+    },
+    {
+        "request": "POST /api/v1/resource",
+        "body": "{\"key\": \"value\", \"payload\": \"<script>alert('XSS')</script>\"}",
+        "headers": {
+            "Cookie": "sessionid=xyz456",
+            "User_Agent": "Mozilla/5.0",
+            "Accept_Encoding": "gzip",
+            "Accept_Language": "fr-FR"
+        }
+    },
+    {
+        "request": "PUT /api/v1/update",
+        "body": "{\"data\": \"example\", \"admin\": \"true\"}",
+        "headers": {
+            "Cookie": "sessionid=abc789",
+            "User_Agent": "Chrome/90.0",
+            "Accept_Encoding": "br, gzip",
+            "Accept_Language": "en-US,en;q=0.9"
+        }
+    },
+    {
+        "request": "DELETE /api/v1/resource/123; DROP TABLE users",
+        "body": "{\"confirmation\": \"true\"}",
+        "headers": {
+            "Cookie": "sessionid=def012",
+            "User_Agent": "Mozilla/5.0",
+            "Accept_Encoding": "gzip, deflate, br",
+            "Accept_Language": "en-US"
+        }
+    },
+    {
+        "request": "POST /api/v1/login",
+        "body": "{\"username\": \"admin\", \"password\": \"password' OR '1'='1\"}",
+        "headers": {
+            "Cookie": "",
+            "User_Agent": "Mozilla/5.0",
+            "Accept_Encoding": "gzip",
+            "Accept_Language": "en-US"
+        }
+    },
+    {
+        "request": "GET /api/v1/resource",
+        "body": "",
+        "headers": {
+            "Cookie": "sessionid=<img src=x onerror=alert(1)>",
+            "User_Agent": "curl/7.68.0",
+            "Accept_Encoding": "gzip, deflate",
+            "Accept_Language": "en-US"
+        }
+    },
+    {
+        "request": "POST /api/v1/submit",
+        "body": "{\"data\": \"<?php system('ls'); ?>\"}",
+        "headers": {
+            "Cookie": "sessionid=malicious123",
+            "User_Agent": "Mozilla/5.0",
+            "Accept_Encoding": "gzip",
+            "Accept_Language": "en-US"
+        }
+    }
+]
