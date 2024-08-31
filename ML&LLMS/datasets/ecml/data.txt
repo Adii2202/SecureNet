@@ -1,0 +1,18 @@
+Context: It contains the following attributes:
+Operating system running on the Web Server ( UNIX, WINDOWS, UNKNOWN ).
+HTTP Server targeted by the request ( APACHE, MIIS, UNKNOWN ).
+Is the XPATH technology understood by the server? ( TRUE, FALSE, UNKNOWN )
+Is there an LDAP database on the Web Server? ( TRUE, FALSE, UNKNOWN )
+Is there an SQL database on the Web Server? ( TRUE, FALSE, UNKNOWN )
+Classes: lists the different subdivision levels of HTTP query categorization ( and how they are represented in the context part of the dataset ).
+The "type" element indicate which class this request belongs to :
+
+Normal query ( Valid )
+Cross-Site Scripting ( XSS )
+SQL Injection ( SqlInjection )
+LDAP Injection ( LdapInjection )
+XPATH Injection ( XPathInjection )
+Path traversal ( PathTransversal )
+Command execution ( OsCommanding )
+SSI attacks ( SSI )
+Moreover, a flag will be added explaining whether a query is within the assigned context or not. ( element "inContext" taking two values : TRUE or FALSE )
