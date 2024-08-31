@@ -1,5 +1,6 @@
 pandas
 numpy
+matplotlib
 dash==1.13.3
 plotly==4.6.0
 scapy==2.4.3
@@ -10,3 +11,4 @@ fastapi
 uvicorn
 flask
 ipykernel
+scikit-learn
